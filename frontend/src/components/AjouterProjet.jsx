@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { HiArrowLeft, HiPlus } from 'react-icons/hi'
+import { HiArrowLeft, HiPlus, HiPhotograph } from 'react-icons/hi'
 import { useAdmin } from './AdminContext'
 
 const API = import.meta.env.VITE_API_URL
@@ -18,6 +18,8 @@ export default function AjouterProjet() {
     categorie: 'Développement',
     date: ''
   })
+  const [imageMode, setImageMode] = useState('file')
+  const [imagePreview, setImagePreview] = useState(null)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(false)
 
@@ -25,6 +27,17 @@ export default function AjouterProjet() {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      setForm({ ...form, image: reader.result })
+      setImagePreview(reader.result)
+    }
+    reader.readAsDataURL(file)
   }
 
   const handleSubmit = async (e) => {
@@ -108,11 +121,27 @@ export default function AjouterProjet() {
             />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-gold block mb-2">
-                URL Image
-              </label>
+          <div>
+            <label className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-gold block mb-2">
+              Image
+            </label>
+            <div className="flex gap-4 mb-3">
+              <button
+                type="button"
+                onClick={() => { setImageMode('url'); setImagePreview(null); setForm({ ...form, image: '' }) }}
+                className={`font-mono text-xs px-4 py-2 border transition-colors ${imageMode === 'url' ? 'border-gold text-gold bg-gold/10' : 'border-border text-muted hover:text-lite'}`}
+              >
+                URL de l'image
+              </button>
+              <button
+                type="button"
+                onClick={() => { setImageMode('file'); setForm({ ...form, image: '' }) }}
+                className={`font-mono text-xs px-4 py-2 border transition-colors ${imageMode === 'file' ? 'border-gold text-gold bg-gold/10' : 'border-border text-muted hover:text-lite'}`}
+              >
+                Importer l'image
+              </button>
+            </div>
+            {imageMode === 'url' ? (
               <input
                 type="url"
                 name="image"
@@ -121,23 +150,42 @@ export default function AjouterProjet() {
                 placeholder="https://..."
                 className="w-full bg-surface border border-border text-lite px-4 py-3 font-body text-sm outline-none focus:border-gold/50 transition-colors placeholder:text-muted/50"
               />
-            </div>
-            <div>
-              <label className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-gold block mb-2">
-                Catégorie *
-              </label>
-              <select
-                name="categorie"
-                value={form.categorie}
-                onChange={handleChange}
-                className="w-full bg-surface border border-border text-lite px-4 py-3 font-body text-sm outline-none focus:border-gold/50 transition-colors"
-              >
-                <option value="Développement">Développement</option>
-                <option value="DevOps">DevOps</option>
-                <option value="Sécurité">Sécurité</option>
-                <option value="Réseaux">Réseaux</option>
-              </select>
-            </div>
+            ) : (
+              <div>
+                <label className="flex items-center gap-3 cursor-pointer bg-surface border border-border border-dashed px-4 py-4 hover:border-gold/50 transition-colors">
+                  <HiPhotograph className="text-gold" size={20} />
+                  <span className="text-muted text-sm font-body">
+                    {imagePreview ? 'Image sélectionnée — cliquez pour changer' : 'Cliquez pour choisir une image'}
+                  </span>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </label>
+                {imagePreview && (
+                  <img src={imagePreview} alt="Aperçu" className="mt-3 max-h-40 object-cover border border-border" />
+                )}
+              </div>
+            )}
+          </div>
+
+          <div>
+            <label className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-gold block mb-2">
+              Catégorie *
+            </label>
+            <select
+              name="categorie"
+              value={form.categorie}
+              onChange={handleChange}
+              className="w-full bg-surface border border-border text-lite px-4 py-3 font-body text-sm outline-none focus:border-gold/50 transition-colors"
+            >
+              <option value="Développement">Développement</option>
+              <option value="DevOps">DevOps</option>
+              <option value="Sécurité">Sécurité</option>
+              <option value="Réseaux">Réseaux</option>
+            </select>
           </div>
 
           <div>

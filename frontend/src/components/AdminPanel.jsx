@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { HiX, HiPlus, HiPencil, HiTrash, HiCheck } from 'react-icons/hi'
+import { HiX, HiPlus, HiPencil, HiTrash, HiCheck, HiPhotograph } from 'react-icons/hi'
 import { useAdmin } from './AdminContext'
 import { useToast } from './Toast'
 
@@ -30,6 +30,7 @@ export default function AdminPanel() {
   const [editing, setEditing] = useState(null)
   const [form, setForm] = useState(defaultForms.projets)
   const [loading, setLoading] = useState(false)
+  const [imageMode, setImageMode] = useState('file')
 
   useEffect(() => {
     if (panelOpen) fetchItems()
@@ -139,7 +140,7 @@ export default function AdminPanel() {
       case 'projets': return [
         { name: 'libelle', label: 'Titre', type: 'text' },
         { name: 'description', label: 'Description', type: 'textarea' },
-        { name: 'image', label: 'URL Image', type: 'text' },
+        { name: 'image', label: 'Image', type: 'image' },
         { name: 'technologies', label: 'Technologies (virgules)', type: 'text' },
         { name: 'github', label: 'Lien GitHub', type: 'text' },
         { name: 'categorie', label: 'Catégorie', type: 'select', options: ['Développement', 'DevOps', 'Sécurité', 'Réseaux'] },
@@ -236,7 +237,58 @@ export default function AdminPanel() {
                         <label className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-soft block mb-1.5">
                           {field.label}
                         </label>
-                        {field.type === 'textarea' ? (
+                        {field.type === 'image' ? (
+                          <div>
+                            <div className="flex gap-3 mb-2">
+                              <button
+                                type="button"
+                                onClick={() => setImageMode('file')}
+                                className={`font-mono text-[0.6rem] px-3 py-1.5 border transition-colors ${imageMode === 'file' ? 'border-gold text-gold bg-gold/10' : 'border-border text-muted hover:text-lite'}`}
+                              >
+                                Importer l'image
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setImageMode('url')}
+                                className={`font-mono text-[0.6rem] px-3 py-1.5 border transition-colors ${imageMode === 'url' ? 'border-gold text-gold bg-gold/10' : 'border-border text-muted hover:text-lite'}`}
+                              >
+                                URL de l'image
+                              </button>
+                            </div>
+                            {imageMode === 'url' ? (
+                              <input
+                                type="text"
+                                name="image"
+                                value={form.image || ''}
+                                onChange={handleChange}
+                                placeholder="https://..."
+                                className="w-full bg-obsidian border border-border text-lite px-3 py-2 text-sm outline-none focus:border-gold/50 transition-colors"
+                              />
+                            ) : (
+                              <label className="flex items-center gap-3 cursor-pointer bg-obsidian border border-border border-dashed px-3 py-3 hover:border-gold/50 transition-colors">
+                                <HiPhotograph className="text-gold" size={18} />
+                                <span className="text-muted text-sm">
+                                  {form.image && form.image.startsWith('data:') ? 'Image sélectionnée' : 'Choisir une image'}
+                                </span>
+                                <input
+                                  type="file"
+                                  accept="image/*"
+                                  onChange={(e) => {
+                                    const file = e.target.files[0]
+                                    if (!file) return
+                                    const reader = new FileReader()
+                                    reader.onloadend = () => setForm({ ...form, image: reader.result })
+                                    reader.readAsDataURL(file)
+                                  }}
+                                  className="hidden"
+                                />
+                              </label>
+                            )}
+                            {form.image && (
+                              <img src={form.image} alt="Aperçu" className="mt-2 max-h-24 object-cover border border-border" />
+                            )}
+                          </div>
+                        ) : field.type === 'textarea' ? (
                           <textarea
                             name={field.name}
                             value={form[field.name] || ''}

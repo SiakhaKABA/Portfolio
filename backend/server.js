@@ -10,6 +10,7 @@ import Formation from './models/Formation.js'
 import Experience from './models/Experience.js'
 import Certification from './models/Certification.js'
 import Competence from './models/Competence.js'
+import { seedData } from './data.js'
 
 dotenv.config()
 
@@ -30,8 +31,23 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
+async function autoSeed() {
+  const count = await Projet.countDocuments()
+  if (count > 0) return
+  console.log('Base vide détectée, insertion des données initiales...')
+  await Projet.insertMany(seedData.projets)
+  await Formation.insertMany(seedData.formations)
+  await Experience.insertMany(seedData.experiences)
+  await Certification.insertMany(seedData.certifications)
+  await Competence.insertMany(seedData.competences)
+  console.log('Données initiales insérées')
+}
+
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('MongoDB connecté'))
+  .then(async () => {
+    console.log('MongoDB connecté')
+    await autoSeed()
+  })
   .catch(err => {
     console.error('Erreur MongoDB:', err.message)
     process.exit(1)
