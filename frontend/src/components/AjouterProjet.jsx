@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { HiArrowLeft, HiPlus } from 'react-icons/hi'
 import { useAdmin } from './AdminContext'
 
-const API = import.meta.env.VITE_API_URL
+const API = import.meta.env.VITE_API_URL || '/api'
 
 export default function AjouterProjet() {
   const { isAdmin, authFetch } = useAdmin()

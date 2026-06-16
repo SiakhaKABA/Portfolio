@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 
 const AdminContext = createContext()
-const API = import.meta.env.VITE_API_URL
+const API = import.meta.env.VITE_API_URL || '/api'
 
 export function AdminProvider({ children }) {
   const [isAdmin, setIsAdmin] = useState(!!localStorage.getItem('token'))
