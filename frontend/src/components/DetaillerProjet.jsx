@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { HiArrowLeft, HiExternalLink } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = import.meta.env.VITE_API_URL
 
 export default function DetaillerProjet() {
   const { id } = useParams()

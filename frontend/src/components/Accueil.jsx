@@ -7,7 +7,7 @@ import { HiArrowDown, HiDownload, HiExternalLink } from 'react-icons/hi'
 import photo from '../assets/siakha.jpeg'
 
 const Scene3D = lazy(() => import('./Scene3D'))
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = import.meta.env.VITE_API_URL
 
 
 const skills = [

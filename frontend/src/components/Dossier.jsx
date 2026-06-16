@@ -4,7 +4,7 @@ import { HiAcademicCap, HiBriefcase, HiBadgeCheck, HiChevronRight, HiPencil, HiT
 import { useAdmin } from './AdminContext'
 import { useToast } from './Toast'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = import.meta.env.VITE_API_URL
 
 export default function Dossier() {
   const { isAdmin, openPanelEdit, authFetch } = useAdmin()

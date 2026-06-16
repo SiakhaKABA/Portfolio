@@ -6,7 +6,7 @@ import { FaGithub } from 'react-icons/fa'
 import { useAdmin } from './AdminContext'
 import { useToast } from './Toast'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = import.meta.env.VITE_API_URL
 const categories = ['Tous', 'Développement', 'DevOps', 'Sécurité', 'Réseaux']
 
 export default function Projet() {

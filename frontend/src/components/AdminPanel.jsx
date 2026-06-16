@@ -4,7 +4,7 @@ import { HiX, HiPlus, HiPencil, HiTrash, HiCheck } from 'react-icons/hi'
 import { useAdmin } from './AdminContext'
 import { useToast } from './Toast'
 
-const API = import.meta.env.VITE_API_URL || '/api'
+const API = import.meta.env.VITE_API_URL
 
 const tabs = [
   { key: 'projets', label: 'Projets' },
