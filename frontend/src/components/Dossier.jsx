@@ -112,7 +112,7 @@ export default function Dossier() {
                       </div>
                     </div>
                     <p className="font-mono text-xs text-gold mb-2">{exp.entreprise}</p>
-                    <p className="text-muted text-sm leading-relaxed">{exp.description}</p>
+                    <p className="text-muted text-base leading-relaxed">{exp.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -168,7 +168,7 @@ export default function Dossier() {
                       </div>
                     </div>
                     <p className="font-mono text-xs text-gold mb-2">{formation.etablissement}</p>
-                    <p className="text-muted text-sm leading-relaxed">{formation.description}</p>
+                    <p className="text-muted text-base leading-relaxed">{formation.description}</p>
                   </div>
                 </motion.div>
               ))}
