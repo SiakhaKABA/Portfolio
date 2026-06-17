@@ -228,7 +228,7 @@ export default function Dossier() {
                   {cert.titre}
                 </h3>
                 <p className="font-mono text-[0.65rem] text-gold mb-3">{cert.organisme}</p>
-                <p className="text-muted text-xs leading-relaxed">{cert.description}</p>
+                <p className="text-muted text-sm leading-relaxed">{cert.description}</p>
               </motion.div>
             ))}
 
