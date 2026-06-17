@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX, HiLogout } from 'react-icons/hi'
 import logo from '../assets/logo-sk.jpeg'
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const { isAdmin, triggerLogin, logout } = useAdmin()
   const clickCount = useRef(0)
   const clickTimer = useRef(null)
@@ -30,8 +31,11 @@ export default function Navbar() {
     } else {
       clearTimeout(clickTimer.current)
       clickTimer.current = setTimeout(() => {
+        if (clickCount.current < 3) {
+          navigate('/')
+        }
         clickCount.current = 0
-      }, 600)
+      }, 400)
     }
   }
 
