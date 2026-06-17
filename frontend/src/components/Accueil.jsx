@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { FaDocker, FaAws, FaReact, FaNodeJs, FaGitAlt, FaLinux, FaShieldAlt } from 'react-icons/fa'
 import { SiKubernetes, SiTerraform, SiPostgresql } from 'react-icons/si'
 import { HiArrowDown, HiDownload, HiExternalLink } from 'react-icons/hi'
-import photo from '../assets/siakha.jpeg'
+import photo from '../assets/siakha-pro.jpeg'
 
 const Scene3D = lazy(() => import('./Scene3D'))
 const API = import.meta.env.VITE_API_URL
