@@ -136,23 +136,41 @@ export default function Accueil() {
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative"
+                className="relative flex items-center justify-center"
               >
-                <div className="absolute -inset-4 bg-gradient-to-br from-gold/20 to-transparent rounded-lg blur-xl" />
-                <div className="relative">
+                {/* Glow externe */}
+                <div className="absolute w-[340px] h-[340px] rounded-full bg-gold/10 blur-3xl animate-pulse" />
+                {/* Anneau doré brillant avec rotation */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  className="absolute w-[330px] h-[330px] rounded-full"
+                  style={{
+                    background: 'conic-gradient(from 0deg, transparent, #c9a84c, #e8d48b, #c9a84c, transparent, #c9a84c, #e8d48b, #c9a84c, transparent)',
+                    padding: '3px',
+                  }}
+                />
+                {/* Anneau doré statique */}
+                <div className="absolute w-[320px] h-[320px] rounded-full border-[3px] border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
+                {/* Particules brillantes */}
+                <div className="absolute w-[340px] h-[340px] rounded-full overflow-visible">
+                  <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-2 left-1/2 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
+                  <motion.div animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2.5, repeat: Infinity }} className="absolute top-1/4 right-2 w-1.5 h-1.5 bg-gold-light rounded-full blur-[1px] shadow-[0_0_6px_#e8d48b]" />
+                  <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 1.8, repeat: Infinity }} className="absolute bottom-4 left-8 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
+                  <motion.div animate={{ opacity: [1, 0.5, 1] }} transition={{ duration: 3, repeat: Infinity }} className="absolute bottom-1/4 right-6 w-1.5 h-1.5 bg-gold-light rounded-full blur-[1px] shadow-[0_0_6px_#e8d48b]" />
+                  <motion.div animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2.2, repeat: Infinity }} className="absolute top-1/3 left-0 w-1.5 h-1.5 bg-gold rounded-full blur-[1px] shadow-[0_0_6px_#c9a84c]" />
+                  <motion.div animate={{ opacity: [0.8, 0.3, 0.8] }} transition={{ duration: 2.8, repeat: Infinity }} className="absolute bottom-8 right-1/3 w-2 h-2 bg-gold-light rounded-full blur-[2px] shadow-[0_0_8px_#e8d48b]" />
+                </div>
+                {/* Photo */}
+                <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden">
                   <img
                     src={photo}
                     alt="Siakha Kaba"
-                    className="w-80 h-80 object-cover grayscale-[20%] contrast-110 border border-gold/30 rounded-full"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent" />
-                  <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold" />
-                  <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-gold" />
-                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-gold" />
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold" />
                 </div>
 
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
                   <div className="flex items-center gap-2 bg-surface border border-border px-4 py-2 rounded">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                     <span className="font-mono text-xs text-muted">Disponible</span>
