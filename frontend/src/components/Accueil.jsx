@@ -139,21 +139,21 @@ export default function Accueil() {
                 className="relative flex items-center justify-center"
               >
                 {/* Glow externe */}
-                <div className="absolute w-[340px] h-[340px] rounded-full bg-gold/10 blur-3xl animate-pulse" />
+                <div className="absolute w-[270px] h-[270px] rounded-full bg-gold/10 blur-3xl animate-pulse" />
                 {/* Anneau doré brillant avec rotation */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                  className="absolute w-[330px] h-[330px] rounded-full"
+                  className="absolute w-[260px] h-[260px] rounded-full"
                   style={{
                     background: 'conic-gradient(from 0deg, transparent, #c9a84c, #e8d48b, #c9a84c, transparent, #c9a84c, #e8d48b, #c9a84c, transparent)',
                     padding: '1.5px',
                   }}
                 />
                 {/* Anneau doré statique */}
-                <div className="absolute w-[320px] h-[320px] rounded-full border border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
+                <div className="absolute w-[250px] h-[250px] rounded-full border border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
                 {/* Particules brillantes */}
-                <div className="absolute w-[340px] h-[340px] rounded-full overflow-visible">
+                <div className="absolute w-[270px] h-[270px] rounded-full overflow-visible">
                   <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-2 left-1/2 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
                   <motion.div animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2.5, repeat: Infinity }} className="absolute top-1/4 right-2 w-1.5 h-1.5 bg-gold-light rounded-full blur-[1px] shadow-[0_0_6px_#e8d48b]" />
                   <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 1.8, repeat: Infinity }} className="absolute bottom-4 left-8 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
@@ -162,11 +162,11 @@ export default function Accueil() {
                   <motion.div animate={{ opacity: [0.8, 0.3, 0.8] }} transition={{ duration: 2.8, repeat: Infinity }} className="absolute bottom-8 right-1/3 w-2 h-2 bg-gold-light rounded-full blur-[2px] shadow-[0_0_8px_#e8d48b]" />
                 </div>
                 {/* Photo */}
-                <div className="relative w-[300px] h-[300px] rounded-full overflow-hidden">
+                <div className="relative w-[240px] h-[240px] rounded-full overflow-hidden">
                   <img
                     src={photo}
                     alt="Siakha Kaba"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
 
