@@ -143,7 +143,7 @@ export default function Accueil() {
                   <img
                     src={photo}
                     alt="Siakha Kaba"
-                    className="w-80 h-[420px] object-cover grayscale-[20%] contrast-110 border border-gold/30"
+                    className="w-80 h-[420px] object-cover grayscale-[20%] contrast-110 border border-gold/30 rounded-2xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent" />
                   <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold" />
