@@ -11,18 +11,19 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CLIENT_URL
-        sync: false
+        value: https://siakha-kaba.onrender.com
       - key: PORT
         value: 3001
 
   - type: web
-    name: portfolio-frontend
+    name: siakha-kaba
     runtime: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/dist
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
-        sync: false
+        value: https://portfolio-backend-hzuc.onrender.com
     routes:
       - type: rewrite
         source: /*
