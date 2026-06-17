@@ -147,11 +147,11 @@ export default function Accueil() {
                   className="absolute w-[330px] h-[330px] rounded-full"
                   style={{
                     background: 'conic-gradient(from 0deg, transparent, #c9a84c, #e8d48b, #c9a84c, transparent, #c9a84c, #e8d48b, #c9a84c, transparent)',
-                    padding: '3px',
+                    padding: '1.5px',
                   }}
                 />
                 {/* Anneau doré statique */}
-                <div className="absolute w-[320px] h-[320px] rounded-full border-[3px] border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
+                <div className="absolute w-[320px] h-[320px] rounded-full border border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
                 {/* Particules brillantes */}
                 <div className="absolute w-[340px] h-[340px] rounded-full overflow-visible">
                   <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-2 left-1/2 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
