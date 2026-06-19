@@ -65,7 +65,10 @@ export default function Accueil() {
                 <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold mb-4 block">
                   Ingénieur informatique & DevOps junior
                 </span>
-                <div className="w-12 h-px bg-gold mb-8" />
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-px bg-gold" />
+                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-green-400">Disponible</span>
+                </div>
               </motion.div>
 
               <motion.h1
