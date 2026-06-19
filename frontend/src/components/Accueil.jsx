@@ -67,7 +67,8 @@ export default function Accueil() {
                 </span>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-px bg-gold" />
-                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-green-400">Disponible</span>
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-white">Disponible</span>
                 </div>
               </motion.div>
 
