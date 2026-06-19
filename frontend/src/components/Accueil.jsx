@@ -31,15 +31,17 @@ export default function Accueil() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const [competences, setCompetences] = useState([])
+  const [certifications, setCertifications] = useState([])
 
   useEffect(() => {
     fetch(`${API}/competences`)
-      .then(r => {
-        if (!r.ok) throw new Error()
-        return r.json()
-      })
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
       .then(setCompetences)
       .catch(() => setCompetences([]))
+    fetch(`${API}/certifications`)
+      .then(r => { if (!r.ok) throw new Error(); return r.json() })
+      .then(setCertifications)
+      .catch(() => setCertifications([]))
   }, [])
 
   return (
@@ -246,6 +248,27 @@ export default function Accueil() {
           </div>
         </div>
       </section>
+
+      {/* CERTIFICATIONS MARQUEE */}
+      {certifications.length > 0 && (
+        <section className="py-12 border-y border-border/30 overflow-hidden">
+          <div className="relative">
+            <motion.div
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              className="flex gap-8 whitespace-nowrap"
+            >
+              {[...certifications, ...certifications].map((cert, i) => (
+                <div key={i} className="flex items-center gap-3 px-6 py-3 bg-surface/50 border border-border/50 rounded">
+                  <span className="w-2 h-2 rounded-full bg-gold" />
+                  <span className="font-mono text-xs text-gold tracking-wider">{cert.titre}</span>
+                  <span className="font-mono text-[0.6rem] text-muted">— {cert.organisme}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
     </>
   )
 }
