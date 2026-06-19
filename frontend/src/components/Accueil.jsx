@@ -167,7 +167,7 @@ export default function Accueil() {
                 <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
                   <div className="flex items-center gap-2 bg-surface border border-border px-4 py-2 rounded">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="font-mono text-xs text-muted">Disponible</span>
+                    <span className="font-mono text-xs text-muted">AdminSys</span>
                   </div>
                 </div>
               </motion.div>
