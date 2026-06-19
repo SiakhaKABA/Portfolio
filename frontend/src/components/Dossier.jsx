@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { HiAcademicCap, HiBriefcase, HiBadgeCheck, HiChevronRight, HiPencil, HiTrash } from 'react-icons/hi'
+import { HiAcademicCap, HiBadgeCheck, HiChevronRight, HiPencil, HiTrash } from 'react-icons/hi'
 import { useAdmin } from './AdminContext'
 import { useToast } from './Toast'
 
@@ -10,7 +10,6 @@ export default function Dossier() {
   const { isAdmin, openPanelEdit, authFetch } = useAdmin()
   const { addToast } = useToast()
   const [formations, setFormations] = useState([])
-  const [experiences, setExperiences] = useState([])
   const [certifications, setCertifications] = useState([])
 
   const [error, setError] = useState(false)
@@ -18,11 +17,9 @@ export default function Dossier() {
   const fetchAll = () => {
     Promise.all([
       fetch(`${API}/formations`).then(r => { if (!r.ok) throw new Error(); return r.json() }),
-      fetch(`${API}/experiences`).then(r => { if (!r.ok) throw new Error(); return r.json() }),
       fetch(`${API}/certifications`).then(r => { if (!r.ok) throw new Error(); return r.json() }),
-    ]).then(([f, e, c]) => {
+    ]).then(([f, c]) => {
       setFormations(f)
-      setExperiences(e)
       setCertifications(c)
       setError(false)
     }).catch(() => setError(true))
@@ -62,63 +59,7 @@ export default function Dossier() {
           </div>
         )}
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Expériences */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 bg-gold/10 border border-gold/30 flex items-center justify-center">
-                <HiBriefcase className="text-gold" size={18} />
-              </div>
-              <h2 className="font-display text-2xl">Expériences</h2>
-            </div>
-
-            <div className="space-y-6 relative before:absolute before:left-5 before:top-0 before:bottom-0 before:w-px before:bg-border/50 pl-12">
-              {experiences.map((exp, i) => (
-                <motion.div
-                  key={exp.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="relative group"
-                >
-                  <div className="absolute -left-[1.85rem] top-2 w-2.5 h-2.5 rounded-full bg-gold border-2 border-obsidian" />
-                  <div className="bg-surface/50 border border-border/50 p-5 hover:border-gold/20 transition-colors">
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <h3 className="font-body font-medium text-lite">{exp.poste}</h3>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-[0.6rem] text-gold-dark whitespace-nowrap">{exp.periode}</span>
-                        {isAdmin && (
-                          <>
-                            <button
-                              onClick={() => openPanelEdit('experiences', exp)}
-                              className="w-6 h-6 flex items-center justify-center text-muted hover:text-gold transition-colors opacity-0 group-hover:opacity-100"
-                              title="Modifier"
-                            >
-                              <HiPencil size={12} />
-                            </button>
-                            <button
-                              onClick={() => handleDelete('experiences', exp.id)}
-                              className="w-6 h-6 flex items-center justify-center text-muted hover:text-red-400 transition-colors opacity-0 group-hover:opacity-100"
-                              title="Supprimer"
-                            >
-                              <HiTrash size={12} />
-                            </button>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                    <p className="font-mono text-xs text-gold mb-2">{exp.entreprise}</p>
-                    <p className="text-muted text-base leading-relaxed">{exp.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
+        <div className="grid lg:grid-cols-1 gap-16">
           {/* Formations */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
