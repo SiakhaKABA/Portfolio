@@ -21,7 +21,7 @@ export default function Footer() {
                className="w-10 h-10 border border-border rounded-lg flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all">
               <FaLinkedin size={16} />
             </a>
-            <a href="https://github.com/siakha-kaba" target="_blank" rel="noreferrer"
+            <a href="https://github.com/SiakhaKABA" target="_blank" rel="noreferrer"
                className="w-10 h-10 border border-border rounded-lg flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all">
               <FaGithub size={16} />
             </a>

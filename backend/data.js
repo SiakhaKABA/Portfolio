@@ -133,7 +133,7 @@ export const seedData = {
   competences: [
     {
       categorie: "Développement",
-      outils: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "React Native", "Node.js", "Express", "PHP", "Python", "PostgreSQL", "MongoDB", "Redis"]
+      outils: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "React Native", "Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "Redis"]
     },
     {
       categorie: "DevOps & Cloud",

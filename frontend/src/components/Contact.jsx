@@ -113,7 +113,7 @@ export default function Contact() {
                    className="w-11 h-11 border border-border flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all rounded-lg">
                   <FaLinkedin size={16} />
                 </a>
-                <a href="https://github.com/siakha-kaba" target="_blank" rel="noreferrer"
+                <a href="https://github.com/SiakhaKABA" target="_blank" rel="noreferrer"
                    className="w-11 h-11 border border-border flex items-center justify-center text-muted hover:text-gold hover:border-gold/50 transition-all rounded-lg">
                   <FaGithub size={16} />
                 </a>
