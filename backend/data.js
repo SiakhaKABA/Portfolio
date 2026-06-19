@@ -44,6 +44,33 @@ export const seedData = {
       github: "",
       categorie: "Réseaux",
       date: "2023-03-01"
+    },
+    {
+      libelle: "Développement Fullstack & DevOps – Orange Digital Center",
+      description: "Développement d'applications web complètes avec React/Node.js. Mise en place de pipelines CI/CD et déploiement cloud AWS.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
+      technologies: ["React", "Node.js", "Docker", "AWS", "CI/CD"],
+      github: "",
+      categorie: "Développement",
+      date: "2026-03-01"
+    },
+    {
+      libelle: "Architecture de Sécurité – UGB Saint-Louis",
+      description: "Conception et déploiement d'architectures de sécurité complexes. Intégration Cisco ASA, IDS, VPN IPsec.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+      technologies: ["Cisco ASA", "IDS/IPS", "VPN IPsec", "Firewall"],
+      github: "",
+      categorie: "Sécurité",
+      date: "2023-01-01"
+    },
+    {
+      libelle: "Administration Réseau – UGB Saint-Louis",
+      description: "Mise en place de réseaux à haut débit. Configuration de la QoS et analyse des performances.",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800",
+      technologies: ["QoS", "VLAN", "OSPF", "Monitoring"],
+      github: "",
+      categorie: "Réseaux",
+      date: "2022-01-01"
     }
   ],
   formations: [
@@ -66,26 +93,7 @@ export const seedData = {
       description: "React, Node.js, bases de données, déploiement cloud et méthodologies agiles."
     }
   ],
-  experiences: [
-    {
-      poste: "Développeur Fullstack & DevOps",
-      entreprise: "Orange Digital Center",
-      periode: "Mars 2026 – Présent",
-      description: "Développement d'applications web complètes avec React/Node.js. Mise en place de pipelines CI/CD et déploiement cloud AWS."
-    },
-    {
-      poste: "Architecture de Sécurité",
-      entreprise: "Projet Académique – UGB Saint-Louis",
-      periode: "2021 – 2023",
-      description: "Conception et déploiement d'architectures de sécurité complexes. Intégration Cisco ASA, IDS, VPN IPsec."
-    },
-    {
-      poste: "Administration Réseau",
-      entreprise: "Projet Académique – UGB Saint-Louis",
-      periode: "2021 – 2023",
-      description: "Mise en place de réseaux à haut débit. Configuration de la QoS et analyse des performances."
-    }
-  ],
+  experiences: [],
   certifications: [
     {
       titre: "AWS Cloud Practitioner",
