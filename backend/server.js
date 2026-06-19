@@ -31,19 +31,27 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
+const SEED_VERSION = 2
+
 async function autoSeed() {
-  const count = await Projet.countDocuments()
-  if (count === 0) {
-    console.log('Base vide détectée, insertion des données initiales...')
-    await Formation.insertMany(seedData.formations)
-    await Certification.insertMany(seedData.certifications)
+  const SeedMeta = mongoose.model('SeedMeta', new mongoose.Schema({ version: Number }))
+  const meta = await SeedMeta.findOne()
+  if (!meta || meta.version < SEED_VERSION) {
+    console.log(`Seed v${SEED_VERSION}: mise à jour des données...`)
+    await Projet.deleteMany()
+    await Projet.insertMany(seedData.projets)
+    await Experience.deleteMany()
+    await Competence.deleteMany()
+    await Competence.insertMany(seedData.competences)
+    const formCount = await Formation.countDocuments()
+    if (formCount === 0) {
+      await Formation.insertMany(seedData.formations)
+      await Certification.insertMany(seedData.certifications)
+    }
+    await SeedMeta.deleteMany()
+    await SeedMeta.create({ version: SEED_VERSION })
+    console.log('Données mises à jour')
   }
-  await Projet.deleteMany()
-  await Projet.insertMany(seedData.projets)
-  await Experience.deleteMany()
-  await Competence.deleteMany()
-  await Competence.insertMany(seedData.competences)
-  console.log('Projets, expériences et compétences mis à jour')
 }
 
 mongoose.connect(process.env.MONGODB_URI)
