@@ -33,7 +33,7 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
-const SEED_VERSION = 3
+const SEED_VERSION = 4
 
 async function autoSeed() {
   const SeedMeta = mongoose.model('SeedMeta', new mongoose.Schema({ version: Number }))
@@ -71,7 +71,7 @@ app.use('/projets', createCrudRouter(Projet, 'Projet'))
 app.use('/formations', createCrudRouter(Formation, 'Formation'))
 app.use('/experiences', createCrudRouter(Experience, 'Expérience'))
 app.use('/certifications', createCrudRouter(Certification, 'Certification'))
-app.use('/competences', createCrudRouter(Competence, 'Compétence'))
+app.use('/competences', createCrudRouter(Competence, 'Compétence', { sort: { ordre: 1 } }))
 
 app.get('/', (req, res) => {
   res.json({ message: 'Portfolio API' })

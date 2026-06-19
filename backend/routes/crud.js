@@ -1,12 +1,13 @@
 import { Router } from 'express'
 import { protect } from '../middleware/auth.js'
 
-export function createCrudRouter(Model, label) {
+export function createCrudRouter(Model, label, { sort } = {}) {
   const router = Router()
+  const defaultSort = sort || { createdAt: -1 }
 
   router.get('/', async (req, res) => {
     try {
-      const items = await Model.find().sort({ createdAt: -1 })
+      const items = await Model.find().sort(defaultSort)
       res.json(items)
     } catch (err) {
       res.status(500).json({ error: err.message })

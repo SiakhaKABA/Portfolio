@@ -141,23 +141,28 @@ export const seedData = {
   competences: [
     {
       categorie: "Administration Réseau & Systèmes",
-      outils: ["Active Directory", "DNS", "DHCP", "VLAN", "OSPF", "QoS", "Cisco Packet Tracer", "pfSense"]
+      outils: ["Active Directory", "DNS", "DHCP", "VLAN", "OSPF", "QoS", "Cisco Packet Tracer", "pfSense"],
+      ordre: 1
     },
     {
       categorie: "Sécurité des Réseaux",
-      outils: ["Cisco", "Wireshark", "Nmap", "VPN IPsec", "IDS/IPS", "OWASP"]
+      outils: ["Cisco", "Wireshark", "Nmap", "VPN IPsec", "IDS/IPS", "OWASP"],
+      ordre: 2
     },
     {
       categorie: "Développement",
-      outils: ["React.js", "Tailwind CSS", "Node.js", "Express", "Python", "PostgreSQL", "MongoDB"]
+      outils: ["React.js", "Tailwind CSS", "Node.js", "Express", "Python", "PostgreSQL", "MongoDB"],
+      ordre: 3
     },
     {
       categorie: "DevOps & Cloud AWS",
-      outils: ["Docker", "Kubernetes", "AWS", "Terraform", "CI/CD", "Linux"]
+      outils: ["Docker", "Kubernetes", "AWS", "Terraform", "CI/CD", "Linux"],
+      ordre: 4
     },
     {
       categorie: "Soft Skills",
-      outils: ["Travail en équipe", "Communication", "Résolution de problèmes", "Gestion du temps", "Adaptabilité"]
+      outils: ["Travail en équipe", "Communication", "Résolution de problèmes", "Gestion du temps", "Adaptabilité"],
+      ordre: 5
     }
   ]
 }
