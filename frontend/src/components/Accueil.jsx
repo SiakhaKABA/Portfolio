@@ -206,13 +206,13 @@ export default function Accueil() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-soft text-lg leading-loose mb-6">
+              <p className="text-soft text-lg leading-loose mb-6 text-justify">
                 Ingénieur en réseaux et sécurité en transition vers le Cloud et DevOps.
                 Ma formation AWS re/Start (ODC) combine mon expertise en infrastructures
                 réseau et cybersécurité avec des compétences Cloud (AWS, Docker/Kubernetes,
                 Terraform, Jenkins).
               </p>
-              <p className="text-soft text-lg leading-loose mb-10">
+              <p className="text-soft text-lg leading-loose mb-10 text-justify">
                 Mon objectif : concevoir des solutions cloud sécurisées, automatiser
                 les déploiements et garantir la haute disponibilité des systèmes.
                 J'accompagne la transformation digitale et la modernisation des SI.
