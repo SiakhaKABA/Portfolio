@@ -5,7 +5,7 @@ export const seedData = {
       description: "Application portfolio complète avec backend Node.js, API REST et frontend React. Déploiement automatisé via CI/CD pipeline.",
       image: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800",
       technologies: ["React", "Node.js", "MongoDB", "Docker", "Nginx"],
-      github: "https://github.com/siakha-kaba/portfolio",
+      github: "https://github.com/SiakhaKABA/Portfolio.git",
       categorie: "Développement",
       date: "2026-04-29"
     },
