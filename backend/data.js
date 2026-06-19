@@ -50,7 +50,7 @@ export const seedData = {
       description: "Développement d'applications web complètes avec React/Node.js. Mise en place de pipelines CI/CD et déploiement cloud AWS.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800",
       technologies: ["React", "Node.js", "Docker", "AWS", "CI/CD"],
-      github: "",
+      github: "https://github.com/SiakhaKABA/Portfolio_Siakha_kaba.git",
       categorie: "Développement",
       date: "2026-03-01"
     },
