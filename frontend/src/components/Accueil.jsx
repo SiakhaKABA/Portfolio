@@ -200,7 +200,7 @@ export default function Accueil() {
             <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold block mb-3">À propos</span>
             <div className="w-12 h-px bg-gold mb-8" />
             <h2 className="font-display text-4xl lg:text-6xl font-normal mb-16">
-              Profil & <span className="gold-gradient italic">Expertise</span>
+              Profil & <span className="gold-gradient italic">Compétences</span>
             </h2>
           </motion.div>
 
