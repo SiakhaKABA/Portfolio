@@ -23,12 +23,6 @@ const skills = [
   { icon: FaShieldAlt, label: 'Sécurité Réseaux' },
 ]
 
-const stats = [
-  //{ value: '2+', label: "Années d'expérience" },
-  //{ value: '+', label: 'Projets déployés' },
-  { value: '7+', label: 'Certifications' },
-  //{ value: '99.9%', label: 'Uptime garanti' },
-]
 
 export default function Accueil() {
   const heroRef = useRef(null)
@@ -190,26 +184,6 @@ export default function Accueil() {
         </motion.div>
       </section>
 
-      {/* STATS */}
-      <section className="relative py-20 border-y border-border/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <div className="font-display text-4xl lg:text-5xl text-gold-light mb-2">{stat.value}</div>
-                <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-muted">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ABOUT */}
       <section className="py-24 lg:py-32">
@@ -244,14 +218,6 @@ export default function Accueil() {
                 J'accompagne la transformation digitale et la modernisation des SI.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map(stat => (
-                  <div key={stat.label} className="bg-surface border border-border/50 p-5 text-center">
-                    <div className="font-display text-3xl text-gold-light leading-none mb-2">{stat.value}</div>
-                    <div className="font-mono text-[0.6rem] tracking-[0.12em] uppercase text-muted">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
 
             <motion.div
