@@ -9,7 +9,6 @@ const API = import.meta.env.VITE_API_URL
 const tabs = [
   { key: 'projets', label: 'Projets' },
   { key: 'formations', label: 'Formations' },
-  { key: 'experiences', label: 'Expériences' },
   { key: 'certifications', label: 'Certifications' },
   { key: 'competences', label: 'Compétences' },
 ]
@@ -17,7 +16,6 @@ const tabs = [
 const defaultForms = {
   projets: { libelle: '', description: '', image: '', technologies: '', github: '', categorie: 'Développement', date: '' },
   formations: { diplome: '', etablissement: '', periode: '', description: '' },
-  experiences: { poste: '', entreprise: '', periode: '', description: '' },
   certifications: { titre: '', organisme: '', date: '', description: '' },
   competences: { categorie: '', outils: '' },
 }
@@ -40,9 +38,8 @@ export default function AdminPanel() {
     if (editRequest && panelOpen) {
       setTab(editRequest.tab)
       const item = editRequest.item
-      setEditing(item.id)
-      const formData = { ...item }
-      delete formData.id
+      setEditing(item.id || item._id)
+      const { id, _id, __v, createdAt, updatedAt, ...formData } = item
       if (editRequest.tab === 'projets' && Array.isArray(formData.technologies)) {
         formData.technologies = formData.technologies.join(', ')
       }
@@ -80,7 +77,7 @@ export default function AdminPanel() {
   }
 
   const handleSave = async () => {
-    const payload = { ...form }
+    const { id, _id, __v, createdAt, updatedAt, ...payload } = form
     if (tab === 'projets' && typeof payload.technologies === 'string') {
       payload.technologies = payload.technologies.split(',').map(t => t.trim()).filter(Boolean)
     }
@@ -94,18 +91,21 @@ export default function AdminPanel() {
         method: editing ? 'PUT' : 'POST',
         body: JSON.stringify(payload)
       })
-      if (!res.ok) throw new Error()
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        throw new Error(err.error || 'Erreur serveur')
+      }
+      addToast(editing ? 'Modifié avec succès' : 'Ajouté avec succès')
       resetForm()
       fetchItems()
-    } catch {
-      addToast('Erreur lors de la sauvegarde')
+    } catch (err) {
+      addToast(err.message || 'Erreur lors de la sauvegarde')
     }
   }
 
   const handleEdit = (item) => {
-    setEditing(item.id)
-    const formData = { ...item }
-    delete formData.id
+    setEditing(item.id || item._id)
+    const { id, _id, __v, createdAt, updatedAt, ...formData } = item
     if (tab === 'projets' && Array.isArray(formData.technologies)) {
       formData.technologies = formData.technologies.join(', ')
     }
@@ -129,7 +129,6 @@ export default function AdminPanel() {
   const getItemLabel = (item) => {
     if (tab === 'projets') return item.libelle
     if (tab === 'formations') return item.diplome
-    if (tab === 'experiences') return item.poste
     if (tab === 'certifications') return item.titre
     if (tab === 'competences') return item.categorie
     return ''
@@ -149,12 +148,6 @@ export default function AdminPanel() {
       case 'formations': return [
         { name: 'diplome', label: 'Diplôme', type: 'text' },
         { name: 'etablissement', label: 'Établissement', type: 'text' },
-        { name: 'periode', label: 'Période', type: 'text' },
-        { name: 'description', label: 'Description', type: 'textarea' },
-      ]
-      case 'experiences': return [
-        { name: 'poste', label: 'Poste', type: 'text' },
-        { name: 'entreprise', label: 'Entreprise', type: 'text' },
         { name: 'periode', label: 'Période', type: 'text' },
         { name: 'description', label: 'Description', type: 'textarea' },
       ]
