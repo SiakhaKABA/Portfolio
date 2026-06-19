@@ -33,14 +33,16 @@ app.use('/auth', limiter)
 
 async function autoSeed() {
   const count = await Projet.countDocuments()
-  if (count > 0) return
-  console.log('Base vide détectée, insertion des données initiales...')
-  await Projet.insertMany(seedData.projets)
-  await Formation.insertMany(seedData.formations)
-  await Experience.insertMany(seedData.experiences)
-  await Certification.insertMany(seedData.certifications)
+  if (count === 0) {
+    console.log('Base vide détectée, insertion des données initiales...')
+    await Projet.insertMany(seedData.projets)
+    await Formation.insertMany(seedData.formations)
+    await Experience.insertMany(seedData.experiences)
+    await Certification.insertMany(seedData.certifications)
+  }
+  await Competence.deleteMany()
   await Competence.insertMany(seedData.competences)
-  console.log('Données initiales insérées')
+  console.log('Compétences mises à jour')
 }
 
 mongoose.connect(process.env.MONGODB_URI)
