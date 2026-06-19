@@ -125,7 +125,7 @@ export default function Accueil() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="hidden lg:flex justify-center"
+              className="hidden lg:flex justify-center -mt-16"
             >
               <motion.div
                 animate={{ y: [0, -12, 0] }}
