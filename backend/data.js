@@ -64,11 +64,11 @@ export const seedData = {
       date: "2023-01-01"
     },
     {
-      libelle: "Administration Réseau – UGB Saint-Louis",
-      description: "Mise en place de réseaux à haut débit. Configuration de la QoS et analyse des performances.",
+      libelle: "Rapport Services Réseau – UGB Saint-Louis",
+      description: "Projet académique combinant audit de sécurité réseau et déploiement de services réseaux. Simulation d'une infrastructure sur Cisco Packet Tracer avec analyse des vulnérabilités, configuration des services (DNS, DHCP, HTTP, FTP) et rédaction de rapports techniques détaillés.",
       image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800",
-      technologies: ["QoS", "VLAN", "OSPF", "Monitoring"],
-      github: "",
+      technologies: ["Cisco Packet Tracer", "Audit Sécurité", "DNS", "DHCP", "Services Réseau"],
+      github: "https://github.com/SiakhaKABA/Projet-cours-audit-s-curite.git",
       categorie: "Réseaux",
       date: "2022-01-01"
     },
