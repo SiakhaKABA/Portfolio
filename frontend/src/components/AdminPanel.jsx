@@ -95,7 +95,7 @@ export default function AdminPanel() {
         const err = await res.json().catch(() => ({}))
         throw new Error(err.error || 'Erreur serveur')
       }
-      addToast(editing ? 'Modifié avec succès' : 'Ajouté avec succès')
+      addToast(editing ? 'Modifié avec succès' : 'Ajouté avec succès', 'success')
       resetForm()
       fetchItems()
     } catch (err) {

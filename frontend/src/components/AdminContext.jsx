@@ -34,9 +34,13 @@ export function AdminProvider({ children }) {
 
   const getToken = () => localStorage.getItem('token')
 
-  const authFetch = (url, options = {}) => {
+  const authFetch = async (url, options = {}) => {
     const token = getToken()
-    return fetch(url, {
+    if (!token) {
+      setShowLogin(true)
+      throw new Error('Session expirée, veuillez vous reconnecter')
+    }
+    const res = await fetch(url, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
@@ -44,6 +48,13 @@ export function AdminProvider({ children }) {
         ...options.headers
       }
     })
+    if (res.status === 401) {
+      localStorage.removeItem('token')
+      setIsAdmin(false)
+      setShowLogin(true)
+      throw new Error('Session expirée, veuillez vous reconnecter')
+    }
+    return res
   }
 
   const triggerLogin = () => {
