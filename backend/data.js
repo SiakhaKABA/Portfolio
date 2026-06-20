@@ -38,9 +38,9 @@ export const seedData = {
     },
     {
       libelle: "Intégration CCNA Réseau",
-      description: "Conception et configuration complète d'une infrastructure réseau d'entreprise simulée avec Cisco Packet Tracer. Topologie Hub-and-Spoke avec VLAN, OSPF, VPN et QoS.",
+      description: "Projet final Réseaux Haut Débit : conception et déploiement d'une infrastructure réseau d'entreprise complète sur Cisco Packet Tracer. Configuration des équipements (routeurs, switches), segmentation VLAN, routage OSPF, VPN IPsec site-à-site et politique QoS. Rapport technique de 48 pages détaillant l'architecture et les configurations.",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
-      technologies: ["Cisco", "OSPF", "VLAN", "VPN IPsec", "QoS"],
+      technologies: ["Cisco Packet Tracer", "OSPF", "VLAN", "VPN IPsec", "QoS", "Réseaux HD"],
       github: "https://github.com/SiakhaKABA/Integration-CCNA-Reseau.git",
       categorie: "Réseaux",
       date: "2023-03-01"
