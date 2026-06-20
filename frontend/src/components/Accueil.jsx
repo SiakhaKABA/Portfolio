@@ -65,7 +65,7 @@ export default function Accueil() {
                 transition={{ duration: 0.8 }}
               >
                 <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold mb-4 block">
-                  Ingénieur informatique & DevOps junior
+                  Ingénieur Réseaux & Sécurité | DevOps Junior
                 </span>
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-12 h-px bg-gold" />
@@ -91,8 +91,8 @@ export default function Accueil() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-soft text-lg leading-relaxed max-w-lg mb-10"
               >
-                Ingénieur informatique, spécialiste réseaux et sécurité.
-                Je conçois des solutions cloud sécurisées et j'automatise les déploiements pour garantir haute disponibilité et performance.
+                Ingénieur en réseaux et sécurité informatique & DevOps Junior.
+                Passionné par l'innovation, je mets mes compétences au service de la transformation digitale et de la modernisation des infrastructures SI.
               </motion.p>
 
               <motion.div
@@ -213,15 +213,17 @@ export default function Accueil() {
               viewport={{ once: true }}
             >
               <p className="text-soft text-lg leading-loose mb-6 text-justify">
-                Ingénieur en réseaux et sécurité en transition vers le Cloud et DevOps.
-                Ma formation AWS re/Start (ODC) combine mon expertise en infrastructures
-                réseau et cybersécurité avec des compétences Cloud (AWS, Docker/Kubernetes,
-                Terraform, Jenkins).
+                Ingénieur en réseaux et sécurité informatique & DevOps Junior. Doté d'une
+                base solide en infrastructures réseaux, systèmes et sécurité informatique,
+                j'ai développé des compétences complémentaires en Cloud Computing (AWS)
+                et culture DevOps. Passionné par l'innovation, je souhaite mettre mes
+                compétences au service d'une entreprise pour contribuer à la transformation
+                digitale et à la modernisation des infrastructures SI.
               </p>
               <p className="text-soft text-lg leading-loose mb-10 text-justify">
-                Mon objectif : concevoir des solutions cloud sécurisées, automatiser
-                les déploiements et garantir la haute disponibilité des systèmes.
-                J'accompagne la transformation digitale et la modernisation des SI.
+                Mon objectif : mettre en œuvre des infrastructures sécurisées, automatiser
+                les déploiements et garantir la haute disponibilité des services au sein
+                d'une entreprise innovante.
               </p>
 
               {certifications.length > 0 && (
