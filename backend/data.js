@@ -10,11 +10,11 @@ export const seedData = {
       date: "2026-04-29"
     },
     {
-      libelle: "Audit de Sécurité Réseau",
-      description: "Réalisation d'audits complets de sécurité d'infrastructures réseau. Détection et analyse des vulnérabilités avec Nmap et Wireshark. Rapport technique détaillé avec mesures correctives.",
+      libelle: "Audit de Sécurité Réseau – UGB Saint-Louis",
+      description: "Projet académique d'audit de sécurité d'une infrastructure réseau simulée sur Cisco Packet Tracer. Identification des vulnérabilités, analyse des risques, tests d'intrusion et rédaction d'un rapport technique avec recommandations et mesures correctives.",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800",
-      technologies: ["Wireshark", "Nmap", "Cisco ASA", "pfSense"],
-      github: "",
+      technologies: ["Cisco Packet Tracer", "Audit Sécurité", "Analyse de vulnérabilités", "Rapport technique"],
+      github: "https://github.com/SiakhaKABA/Projet-cours-audit-s-curite.git",
       categorie: "Sécurité",
       date: "2023-06-01"
     },
