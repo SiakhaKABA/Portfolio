@@ -33,7 +33,7 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
-const SEED_VERSION = 4
+const SEED_VERSION = 5
 
 async function autoSeed() {
   const SeedMeta = mongoose.model('SeedMeta', new mongoose.Schema({ version: Number }))

@@ -71,6 +71,15 @@ export const seedData = {
       github: "",
       categorie: "Réseaux",
       date: "2022-01-01"
+    },
+    {
+      libelle: "ISITech – Site Vitrine",
+      description: "Site vitrine pour ISITech, entreprise de services informatiques spécialisée en sécurité, infrastructure réseau et innovation digitale à Dakar. Architecture Docker avec frontend React et backend json-server.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      technologies: ["React 19", "Vite", "json-server", "Docker", "Nginx"],
+      github: "https://github.com/SiakhaKABA/Isitech-site-web.git",
+      categorie: "Développement",
+      date: "2026-06-18"
     }
   ],
   formations: [
