@@ -41,7 +41,7 @@ export const seedData = {
       description: "Conception et configuration complète d'une infrastructure réseau d'entreprise simulée avec Cisco Packet Tracer. Topologie Hub-and-Spoke avec VLAN, OSPF, VPN et QoS.",
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
       technologies: ["Cisco", "OSPF", "VLAN", "VPN IPsec", "QoS"],
-      github: "",
+      github: "https://github.com/SiakhaKABA/Integration-CCNA-Reseau.git",
       categorie: "Réseaux",
       date: "2023-03-01"
     },
