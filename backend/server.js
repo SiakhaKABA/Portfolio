@@ -45,10 +45,14 @@ async function autoSeed() {
     await Experience.deleteMany()
     await Competence.deleteMany()
     await Competence.insertMany(seedData.competences)
-    await Formation.deleteMany()
-    await Formation.insertMany(seedData.formations)
-    await Certification.deleteMany()
-    await Certification.insertMany(seedData.certifications)
+    const formCount = await Formation.countDocuments()
+    if (formCount === 0) {
+      await Formation.insertMany(seedData.formations)
+    }
+    const certCount = await Certification.countDocuments()
+    if (certCount === 0) {
+      await Certification.insertMany(seedData.certifications)
+    }
     await SeedMeta.deleteMany()
     await SeedMeta.create({ version: SEED_VERSION })
     console.log('Données mises à jour')
