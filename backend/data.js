@@ -84,22 +84,25 @@ export const seedData = {
   ],
   formations: [
     {
+      diplome: "Formation Développement Web Fullstack",
+      etablissement: "Orange Digital Center",
+      periode: "Mars 2026 – Juillet 2026",
+      description: "React, Node.js, bases de données, déploiement cloud et méthodologies agiles.",
+      ordre: 1
+    },
+    {
       diplome: "Master en Réseau, Sécurité et Systèmes Distribués",
       etablissement: "Université Gaston Berger de Saint-Louis",
       periode: "2021 – 2023",
-      description: "Spécialisation en architecture réseau avancée, sécurité informatique et systèmes distribués."
+      description: "Spécialisation en architecture réseau avancée, sécurité informatique et systèmes distribués.",
+      ordre: 2
     },
     {
       diplome: "Licence en Administration et Maintenance des Réseaux",
       etablissement: "Université Alioune Diop de Bambey",
       periode: "2016 – 2019",
-      description: "Formation en administration des réseaux et maintenance des systèmes téléinformatiques."
-    },
-    {
-      diplome: "Formation Développement Web Fullstack",
-      etablissement: "Orange Digital Center",
-      periode: "Mars 2026 – Juillet 2026",
-      description: "React, Node.js, bases de données, déploiement cloud et méthodologies agiles."
+      description: "Formation en administration des réseaux et maintenance des systèmes téléinformatiques.",
+      ordre: 3
     }
   ],
   experiences: [],
@@ -108,43 +111,50 @@ export const seedData = {
       titre: "AWS Cloud Practitioner",
       organisme: "Amazon Web Services",
       date: "Juillet 2026",
-      description: "Certification d'introduction AWS couvrant l'infrastructure cloud, la sécurité, les modèles de tarification et les bonnes pratiques d'architecture."
-    },
-    {
-      titre: "Cybersecurity Essentials",
-      organisme: "Cisco Networking Academy",
-      date: "Septembre 2023",
-      description: "Tactiques cybercriminels, principes CIA et protection des réseaux."
-    },
-    {
-      titre: "Analyste en Cybersécurité",
-      organisme: "FORCE-N / UNCHK",
-      date: "Avril 2024",
-      description: "Analyse des menaces, réponse aux incidents et protection des infrastructures."
-    },
-    {
-      titre: "Python pour la Data Science",
-      organisme: "Data Afrique Hub",
-      date: "Janvier 2024",
-      description: "Pandas, NumPy, Matplotlib et initiation au Machine Learning."
+      description: "Certification d'introduction AWS couvrant l'infrastructure cloud, la sécurité, les modèles de tarification et les bonnes pratiques d'architecture.",
+      ordre: 1
     },
     {
       titre: "Intelligence Artificielle",
       organisme: "FORCE-N / UNCHK",
       date: "Octobre 2025",
-      description: "Fondamentaux de l'IA, machine learning et applications pratiques."
+      description: "Fondamentaux de l'IA, machine learning et applications pratiques.",
+      ordre: 2
     },
     {
       titre: "MOOC Cybersécurité",
       organisme: "Cyberini.com",
       date: "Avril 2025",
-      description: "Compétences en sécurité des systèmes et réseaux."
+      description: "Compétences en sécurité des systèmes et réseaux.",
+      ordre: 3
     },
     {
       titre: "Entreprenariat Numérique",
       organisme: "ForceN-UNCHK",
       date: "2025",
-      description: "Création et développement de projets digitaux innovants."
+      description: "Création et développement de projets digitaux innovants.",
+      ordre: 4
+    },
+    {
+      titre: "Analyste en Cybersécurité",
+      organisme: "FORCE-N / UNCHK",
+      date: "Avril 2024",
+      description: "Analyse des menaces, réponse aux incidents et protection des infrastructures.",
+      ordre: 5
+    },
+    {
+      titre: "Python pour la Data Science",
+      organisme: "Data Afrique Hub",
+      date: "Janvier 2024",
+      description: "Pandas, NumPy, Matplotlib et initiation au Machine Learning.",
+      ordre: 6
+    },
+    {
+      titre: "Cybersecurity Essentials",
+      organisme: "Cisco Networking Academy",
+      date: "Septembre 2023",
+      description: "Tactiques cybercriminels, principes CIA et protection des réseaux.",
+      ordre: 7
     }
   ],
   competences: [

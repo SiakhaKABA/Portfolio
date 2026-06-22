@@ -33,7 +33,7 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
-const SEED_VERSION = 9
+const SEED_VERSION = 10
 
 async function autoSeed() {
   const SeedMeta = mongoose.model('SeedMeta', new mongoose.Schema({ version: Number }))
@@ -45,11 +45,10 @@ async function autoSeed() {
     await Experience.deleteMany()
     await Competence.deleteMany()
     await Competence.insertMany(seedData.competences)
-    const formCount = await Formation.countDocuments()
-    if (formCount === 0) {
-      await Formation.insertMany(seedData.formations)
-      await Certification.insertMany(seedData.certifications)
-    }
+    await Formation.deleteMany()
+    await Formation.insertMany(seedData.formations)
+    await Certification.deleteMany()
+    await Certification.insertMany(seedData.certifications)
     await SeedMeta.deleteMany()
     await SeedMeta.create({ version: SEED_VERSION })
     console.log('Données mises à jour')
@@ -68,9 +67,9 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use('/auth', authRoutes)
 app.use('/projets', createCrudRouter(Projet, 'Projet'))
-app.use('/formations', createCrudRouter(Formation, 'Formation'))
+app.use('/formations', createCrudRouter(Formation, 'Formation', { sort: { ordre: 1 } }))
 app.use('/experiences', createCrudRouter(Experience, 'Expérience'))
-app.use('/certifications', createCrudRouter(Certification, 'Certification'))
+app.use('/certifications', createCrudRouter(Certification, 'Certification', { sort: { ordre: 1 } }))
 app.use('/competences', createCrudRouter(Competence, 'Compétence', { sort: { ordre: 1 } }))
 
 app.get('/', (req, res) => {
