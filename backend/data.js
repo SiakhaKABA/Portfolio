@@ -150,11 +150,18 @@ export const seedData = {
       ordre: 6
     },
     {
+      titre: "Networking Devices and Initial Configuration",
+      organisme: "Cisco Networking Academy",
+      date: "Décembre 2023",
+      description: "Configuration initiale des équipements réseau, conception hiérarchique, sous-réseaux IPv4, protocoles de transport et utilisation de Cisco IOS.",
+      ordre: 7
+    },
+    {
       titre: "Cybersecurity Essentials",
       organisme: "Cisco Networking Academy",
       date: "Septembre 2023",
       description: "Tactiques cybercriminels, principes CIA et protection des réseaux.",
-      ordre: 7
+      ordre: 8
     }
   ],
   competences: [
