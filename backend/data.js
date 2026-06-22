@@ -132,7 +132,7 @@ export const seedData = {
       titre: "MOOC Cybersécurité",
       organisme: "Cyberini.com",
       date: "Avril 2025",
-      description: "Compétences en sécurité des systèmes et réseaux.",
+      description: "Formation complète en cybersécurité couvrant la sécurité des systèmes, réseaux et données. Certificat N°MOO2515373KM.",
       ordre: 4
     },
     {
