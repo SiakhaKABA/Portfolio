@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 
 const router = Router()
 
-const ADMIN_PASSWORD_HASH = bcrypt.hashSync('sk@admin2026', 10)
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH
 
 router.post('/login', async (req, res) => {
   const { password } = req.body
