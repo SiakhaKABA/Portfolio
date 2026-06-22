@@ -33,7 +33,7 @@ const limiter = rateLimit({
 })
 app.use('/auth', limiter)
 
-const SEED_VERSION = 11
+const SEED_VERSION = 12
 
 async function autoSeed() {
   const SeedMeta = mongoose.model('SeedMeta', new mongoose.Schema({ version: Number }))
@@ -49,10 +49,8 @@ async function autoSeed() {
     if (formCount === 0) {
       await Formation.insertMany(seedData.formations)
     }
-    const certCount = await Certification.countDocuments()
-    if (certCount === 0) {
-      await Certification.insertMany(seedData.certifications)
-    }
+    await Certification.deleteMany()
+    await Certification.insertMany(seedData.certifications)
     await SeedMeta.deleteMany()
     await SeedMeta.create({ version: SEED_VERSION })
     console.log('Données mises à jour')
