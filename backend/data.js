@@ -84,10 +84,10 @@ export const seedData = {
   ],
   formations: [
     {
-      diplome: "Formation Développement Web Fullstack",
+      diplome: "Formation Cloud AWS / DevOps",
       etablissement: "Orange Digital Center",
       periode: "Mars 2026 – Juillet 2026",
-      description: "React, Node.js, bases de données, déploiement cloud et méthodologies agiles.",
+      description: "Architecture cloud AWS, conteneurisation Docker/Kubernetes, pipelines CI/CD, infrastructure as code et déploiement automatisé.",
       ordre: 1
     },
     {
