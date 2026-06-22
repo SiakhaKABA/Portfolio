@@ -115,24 +115,24 @@ export const seedData = {
       ordre: 1
     },
     {
+      titre: "Entreprenariat Numérique",
+      organisme: "ForceN-UNCHK",
+      date: "Janvier 2026",
+      description: "Création et développement de projets digitaux innovants.",
+      ordre: 2
+    },
+    {
       titre: "Intelligence Artificielle",
       organisme: "FORCE-N / UNCHK",
       date: "Octobre 2025",
       description: "Fondamentaux de l'IA, machine learning et applications pratiques.",
-      ordre: 2
+      ordre: 3
     },
     {
       titre: "MOOC Cybersécurité",
       organisme: "Cyberini.com",
       date: "Avril 2025",
       description: "Compétences en sécurité des systèmes et réseaux.",
-      ordre: 3
-    },
-    {
-      titre: "Entreprenariat Numérique",
-      organisme: "ForceN-UNCHK",
-      date: "2025",
-      description: "Création et développement de projets digitaux innovants.",
       ordre: 4
     },
     {
