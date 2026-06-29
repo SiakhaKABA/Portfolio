@@ -213,7 +213,7 @@ export default function Accueil() {
               viewport={{ once: true }}
               className="min-w-0"
             >
-              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-6">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-6 text-justify">
                 Ingénieur en réseaux et sécurité informatique & DevOps Junior. Doté d'une
                 base solide en infrastructures réseaux, systèmes et sécurité informatique,
                 j'ai développé des compétences complémentaires en Cloud Computing (AWS)
@@ -221,7 +221,7 @@ export default function Accueil() {
                 compétences au service d'une entreprise pour contribuer à la transformation
                 digitale et à la modernisation des infrastructures SI.
               </p>
-              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10 text-justify">
                 Mon objectif : mettre en œuvre des infrastructures sécurisées, automatiser
                 les déploiements et garantir la haute disponibilité des services au sein
                 d'une entreprise innovante.
