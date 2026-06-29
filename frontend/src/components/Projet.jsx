@@ -50,7 +50,7 @@ export default function Projet() {
 
   return (
     <section className="min-h-screen pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Projet() {
           )}
           <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold block mb-3">Portfolio</span>
           <div className="w-12 h-px bg-gold mb-8" />
-          <h1 className="font-display text-4xl lg:text-6xl font-normal">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-normal">
             Mes <span className="gold-gradient italic">Projets</span>
           </h1>
         </motion.div>
@@ -76,7 +76,7 @@ export default function Projet() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap gap-3 mb-12"
+          className="flex flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-12"
         >
           {categories.map(cat => (
             <button

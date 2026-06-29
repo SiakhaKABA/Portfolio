@@ -4,10 +4,10 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
 export default function Footer() {
   return (
     <footer className="border-t border-border/50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+          <div className="text-center sm:text-left">
+            <div className="flex items-center gap-3 mb-3 justify-center sm:justify-start">
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center">
                 <span className="font-mono text-xs font-bold text-obsidian">SK</span>
               </div>
@@ -31,7 +31,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="text-right">
+          <div className="text-center sm:text-right">
             <p className="font-mono text-xs text-muted">&copy; 2026 Siakha Kaba</p>
             <p className="font-mono text-xs text-gold-dark mt-1">Tous droits réservés</p>
           </div>

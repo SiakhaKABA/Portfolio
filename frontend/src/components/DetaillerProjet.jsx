@@ -45,7 +45,7 @@ export default function DetaillerProjet() {
 
   return (
     <section className="min-h-screen pt-28 pb-20">
-      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <Link to="/projets" className="inline-flex items-center gap-2 text-muted hover:text-gold font-mono text-xs tracking-wider mb-10 transition-colors">
             <HiArrowLeft size={14} /> RETOUR AUX PROJETS
@@ -57,7 +57,7 @@ export default function DetaillerProjet() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <div className="relative h-72 lg:h-96 overflow-hidden mb-10">
+          <div className="relative h-48 sm:h-72 lg:h-96 overflow-hidden mb-8 sm:mb-10">
             <img
               src={projet.image}
               alt={projet.libelle}
@@ -77,7 +77,7 @@ export default function DetaillerProjet() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="font-display text-3xl lg:text-5xl font-normal mb-6">{projet.libelle}</h1>
+          <h1 className="font-display text-2xl sm:text-3xl lg:text-5xl font-normal mb-6">{projet.libelle}</h1>
 
           <div className="flex flex-wrap gap-2 mb-8">
             {projet.technologies.map(tech => (
@@ -93,7 +93,7 @@ export default function DetaillerProjet() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-6 border-t border-border/50">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-6 border-t border-border/50">
             {projet.github && (
               <a
                 href={projet.github}

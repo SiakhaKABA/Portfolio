@@ -54,7 +54,7 @@ export default function Navbar() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? 'glass shadow-lg shadow-black/20' : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
           <div className="flex items-center gap-3 group cursor-pointer" onClick={handleLogoClick}>
             <img
               src={logo}
@@ -117,7 +117,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-obsidian/98 backdrop-blur-xl flex flex-col items-center justify-center gap-10"
+            className="fixed inset-0 z-[100] bg-obsidian/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8 sm:gap-10"
           >
             <button
               onClick={() => setMenuOpen(false)}
@@ -135,7 +135,7 @@ export default function Navbar() {
               >
                 <Link
                   to={link.path}
-                  className={`font-mono text-lg tracking-[0.2em] uppercase transition-colors ${
+                  className={`font-mono text-base sm:text-lg tracking-[0.2em] uppercase transition-colors py-2 ${
                     location.pathname === link.path ? 'text-gold' : 'text-soft hover:text-gold'
                   }`}
                 >

@@ -49,7 +49,7 @@ export default function Contact() {
 
   return (
     <section className="min-h-screen pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,19 +57,19 @@ export default function Contact() {
         >
           <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold block mb-3">Contact</span>
           <div className="w-12 h-px bg-gold mb-8" />
-          <h1 className="font-display text-4xl lg:text-6xl font-normal">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-normal">
             Travaillons <span className="gold-gradient italic">ensemble</span>
           </h1>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-20">
           {/* Infos */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <p className="text-soft text-lg leading-loose mb-10">
+            <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10">
               Un projet en tête ? Une infrastructure mettre en place ou à déployer ? Une application à développer ?
               N'hésitez pas, je réponds sous 24 heures.
             </p>
@@ -131,7 +131,7 @@ export default function Contact() {
             transition={{ delay: 0.3 }}
           >
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-gold block mb-2">Nom *</label>
                   <input

@@ -56,15 +56,15 @@ export default function Accueil() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-transparent to-obsidian z-[1]" />
 
-        <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center pt-20">
+        <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center pt-24 sm:pt-20">
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold mb-4 block">
+                <span className="font-mono text-[0.6rem] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] uppercase text-gold mb-4 block">
                   Ingénieur Réseaux & Sécurité | DevOps Junior
                 </span>
                 <div className="flex items-center gap-4 mb-8">
@@ -78,7 +78,7 @@ export default function Accueil() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-display text-6xl lg:text-8xl font-normal leading-[0.9] mb-8"
+                className="font-display text-4xl sm:text-6xl lg:text-8xl font-normal leading-[0.9] mb-6 sm:mb-8"
               >
                 Siakha
                 <br />
@@ -89,7 +89,7 @@ export default function Accueil() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-soft text-lg leading-relaxed max-w-lg mb-10"
+                className="text-soft text-base sm:text-lg leading-relaxed max-w-lg mb-8 sm:mb-10"
               >
                 Ingénieur en réseaux et sécurité informatique & DevOps Junior.
                 Passionné par l'innovation, je mets mes compétences au service de la transformation digitale et de la modernisation des infrastructures SI.
@@ -99,7 +99,7 @@ export default function Accueil() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="flex flex-wrap gap-4 mb-10"
+                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10"
               >
                 <Link to="/projets"
                   className="inline-flex items-center gap-2 bg-gold text-obsidian px-6 py-3 font-mono text-xs tracking-wider uppercase font-medium hover:bg-gold-light transition-colors">
@@ -192,8 +192,8 @@ export default function Accueil() {
 
 
       {/* ABOUT */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -201,18 +201,18 @@ export default function Accueil() {
           >
             <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold block mb-3">À propos</span>
             <div className="w-12 h-px bg-gold mb-8" />
-            <h2 className="font-display text-4xl lg:text-6xl font-normal mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-6xl font-normal mb-10 sm:mb-16">
               Profil & <span className="gold-gradient italic">Compétences</span>
             </h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-20">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-20">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-soft text-lg leading-loose mb-6 text-justify">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-6 text-justify">
                 Ingénieur en réseaux et sécurité informatique & DevOps Junior. Doté d'une
                 base solide en infrastructures réseaux, systèmes et sécurité informatique,
                 j'ai développé des compétences complémentaires en Cloud Computing (AWS)
@@ -220,7 +220,7 @@ export default function Accueil() {
                 compétences au service d'une entreprise pour contribuer à la transformation
                 digitale et à la modernisation des infrastructures SI.
               </p>
-              <p className="text-soft text-lg leading-loose mb-10 text-justify">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10 text-justify">
                 Mon objectif : mettre en œuvre des infrastructures sécurisées, automatiser
                 les déploiements et garantir la haute disponibilité des services au sein
                 d'une entreprise innovante.

@@ -40,7 +40,7 @@ export default function Dossier() {
 
   return (
     <section className="min-h-screen pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Dossier() {
         >
           <span className="font-mono text-xs tracking-[0.3em] uppercase text-gold block mb-3">Parcours</span>
           <div className="w-12 h-px bg-gold mb-8" />
-          <h1 className="font-display text-4xl lg:text-6xl font-normal">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-normal">
             Mon <span className="gold-gradient italic">Parcours</span>
           </h1>
         </motion.div>
@@ -73,7 +73,7 @@ export default function Dossier() {
               <h2 className="font-display text-2xl">Formations</h2>
             </div>
 
-            <div className="space-y-6 relative before:absolute before:left-5 before:top-0 before:bottom-0 before:w-px before:bg-border/50 pl-12">
+            <div className="space-y-6 relative before:absolute before:left-3 sm:before:left-5 before:top-0 before:bottom-0 before:w-px before:bg-border/50 pl-8 sm:pl-12">
               {formations.map((formation, i) => (
                 <motion.div
                   key={formation.id}
@@ -82,9 +82,9 @@ export default function Dossier() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className="relative group"
                 >
-                  <div className="absolute -left-[1.85rem] top-2 w-2.5 h-2.5 rounded-full bg-gold border-2 border-obsidian" />
-                  <div className="bg-surface/50 border border-border/50 p-5 hover:border-gold/20 transition-colors">
-                    <div className="flex items-start justify-between gap-4 mb-2">
+                  <div className="absolute -left-[1.4rem] sm:-left-[1.85rem] top-2 w-2.5 h-2.5 rounded-full bg-gold border-2 border-obsidian" />
+                  <div className="bg-surface/50 border border-border/50 p-4 sm:p-5 hover:border-gold/20 transition-colors">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4 mb-2">
                       <h3 className="font-body font-medium text-lite text-sm">{formation.diplome}</h3>
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-[0.6rem] text-gold-dark whitespace-nowrap">{formation.periode}</span>

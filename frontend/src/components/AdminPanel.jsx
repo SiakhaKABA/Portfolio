@@ -193,9 +193,9 @@ export default function AdminPanel() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25 }}
-              className="w-full max-w-2xl h-full bg-charcoal border-l border-border overflow-y-auto"
+              className="w-full sm:max-w-2xl h-full bg-charcoal border-l border-border overflow-y-auto"
             >
-              <div className="sticky top-0 bg-charcoal border-b border-border p-6 flex items-center justify-between z-10">
+              <div className="sticky top-0 bg-charcoal border-b border-border p-4 sm:p-6 flex items-center justify-between z-10">
                 <div>
                   <h2 className="font-display text-xl text-lite">Panneau Admin</h2>
                   <p className="font-mono text-[0.6rem] text-gold tracking-wider">GESTION DU CONTENU</p>
@@ -219,7 +219,7 @@ export default function AdminPanel() {
                 ))}
               </div>
 
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="bg-surface border border-border/50 p-5 mb-8">
                   <h3 className="font-mono text-xs text-gold tracking-wider mb-4">
                     {editing ? 'MODIFIER' : 'AJOUTER'}
