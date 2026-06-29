@@ -206,7 +206,7 @@ export default function Accueil() {
             </h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-20">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-20 overflow-hidden">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -227,16 +227,16 @@ export default function Accueil() {
               </p>
 
               {certifications.length > 0 && (
-                <div className="overflow-hidden rounded">
+                <div className="overflow-hidden rounded w-full max-w-full">
                   <motion.div
                     animate={{ x: ['0%', '-50%'] }}
                     transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                    className="flex gap-6 whitespace-nowrap"
+                    className="flex gap-3 sm:gap-6 whitespace-nowrap w-max"
                   >
                     {[...certifications, ...certifications].map((cert, i) => (
-                      <div key={i} className="flex items-center gap-2 px-4 py-2 bg-surface/50 border border-border/50 rounded">
-                        <span className="w-2 h-2 rounded-full bg-gold" />
-                        <span className="font-mono text-xs text-gold tracking-wider">{cert.titre}</span>
+                      <div key={i} className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-surface/50 border border-border/50 rounded">
+                        <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
+                        <span className="font-mono text-[0.6rem] sm:text-xs text-gold tracking-wider">{cert.titre}</span>
                       </div>
                     ))}
                   </motion.div>
@@ -249,14 +249,14 @@ export default function Accueil() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8 overflow-hidden"
             >
               {competences.map(comp => (
                 <div key={comp.id}>
-                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-gold mb-4 block">{comp.categorie}</span>
-                  <div className="flex flex-wrap gap-2">
+                  <span className="font-mono text-[0.6rem] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-gold mb-3 sm:mb-4 block">{comp.categorie}</span>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {comp.outils.map(s => (
-                      <span key={s} className="px-3 py-1.5 bg-gold/5 border border-gold/20 text-gold font-mono text-xs rounded">
+                      <span key={s} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gold/5 border border-gold/20 text-gold font-mono text-[0.6rem] sm:text-xs rounded break-all">
                         {s}
                       </span>
                     ))}
