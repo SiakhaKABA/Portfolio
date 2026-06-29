@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 
 const router = Router()
 
-const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH
+const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '$2b$10$i3RyVs4sjLllTJbl152Lx.L6CxAayPLbbRxT6cOcz.8A5TGoQVlFq'
 
 router.post('/login', async (req, res) => {
   const { password } = req.body
