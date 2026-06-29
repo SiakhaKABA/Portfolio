@@ -192,7 +192,7 @@ export default function Accueil() {
 
 
       {/* ABOUT */}
-      <section className="py-16 sm:py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32 overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -206,13 +206,14 @@ export default function Accueil() {
             </h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-20 overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-20">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="min-w-0"
             >
-              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-6 text-justify">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-6">
                 Ingénieur en réseaux et sécurité informatique & DevOps Junior. Doté d'une
                 base solide en infrastructures réseaux, systèmes et sécurité informatique,
                 j'ai développé des compétences complémentaires en Cloud Computing (AWS)
@@ -220,14 +221,14 @@ export default function Accueil() {
                 compétences au service d'une entreprise pour contribuer à la transformation
                 digitale et à la modernisation des infrastructures SI.
               </p>
-              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10 text-justify">
+              <p className="text-soft text-base sm:text-lg leading-relaxed sm:leading-loose mb-8 sm:mb-10">
                 Mon objectif : mettre en œuvre des infrastructures sécurisées, automatiser
                 les déploiements et garantir la haute disponibilité des services au sein
                 d'une entreprise innovante.
               </p>
 
               {certifications.length > 0 && (
-                <div className="overflow-hidden rounded w-full max-w-full">
+                <div className="overflow-hidden rounded">
                   <motion.div
                     animate={{ x: ['0%', '-50%'] }}
                     transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
@@ -249,14 +250,14 @@ export default function Accueil() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6 sm:space-y-8 overflow-hidden"
+              className="space-y-6 sm:space-y-8 min-w-0"
             >
               {competences.map(comp => (
                 <div key={comp.id}>
                   <span className="font-mono text-[0.6rem] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-gold mb-3 sm:mb-4 block">{comp.categorie}</span>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {comp.outils.map(s => (
-                      <span key={s} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gold/5 border border-gold/20 text-gold font-mono text-[0.6rem] sm:text-xs rounded break-all">
+                      <span key={s} className="px-2 sm:px-3 py-1 sm:py-1.5 bg-gold/5 border border-gold/20 text-gold font-mono text-[0.6rem] sm:text-xs rounded">
                         {s}
                       </span>
                     ))}
