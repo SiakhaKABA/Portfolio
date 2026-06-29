@@ -113,37 +113,64 @@ export default function Navbar() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-obsidian/98 backdrop-blur-xl flex flex-col items-center justify-center gap-8 sm:gap-10"
-          >
-            <button
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] bg-obsidian/70 backdrop-blur-sm"
               onClick={() => setMenuOpen(false)}
-              className="absolute top-6 right-6 text-soft hover:text-gold transition-colors"
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 z-[101] w-72 bg-charcoal border-l border-border/50 flex flex-col"
             >
-              <HiX size={28} />
-            </button>
-
-            {links.map((link, i) => (
-              <motion.div
-                key={link.path}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link
-                  to={link.path}
-                  className={`font-mono text-base sm:text-lg tracking-[0.2em] uppercase transition-colors py-2 ${
-                    location.pathname === link.path ? 'text-gold' : 'text-soft hover:text-gold'
-                  }`}
+              <div className="flex items-center justify-between px-6 h-16 border-b border-border/50">
+                <span className="font-mono text-xs tracking-[0.2em] text-gold-light">MENU</span>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="text-soft hover:text-gold transition-colors"
                 >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+                  <HiX size={24} />
+                </button>
+              </div>
+
+              <nav className="flex flex-col px-6 pt-8 gap-2">
+                {links.map((link, i) => (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                  >
+                    <Link
+                      to={link.path}
+                      className={`block font-mono text-sm tracking-[0.2em] uppercase py-3 px-4 rounded transition-all ${
+                        location.pathname === link.path
+                          ? 'text-gold bg-gold/10 border-l-2 border-gold'
+                          : 'text-soft hover:text-gold hover:bg-surface/50'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
+              <div className="mt-auto px-6 pb-8 border-t border-border/50 pt-6">
+                <div className="flex items-center gap-3">
+                  <img src={logo} alt="Logo SK" className="w-8 h-8 rounded-full object-cover border border-gold/30" />
+                  <div>
+                    <span className="font-mono text-[0.6rem] tracking-wider text-gold-light block">Siakha Kaba</span>
+                    <span className="font-mono text-[0.55rem] text-muted">Ingénieur Réseaux & DevOps</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
