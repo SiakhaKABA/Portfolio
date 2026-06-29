@@ -57,7 +57,7 @@ export default function Accueil() {
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/40 via-transparent to-obsidian z-[1]" />
 
         <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center pt-24 sm:pt-20">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center pt-24 sm:pt-20">
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -131,7 +131,7 @@ export default function Accueil() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="hidden lg:flex justify-center -mt-16"
+              className="flex justify-center mt-8 sm:mt-4 lg:-mt-16"
             >
               <motion.div
                 animate={{ y: [0, -12, 0] }}
@@ -139,21 +139,21 @@ export default function Accueil() {
                 className="relative flex items-center justify-center"
               >
                 {/* Glow externe */}
-                <div className="absolute w-[360px] h-[360px] rounded-full bg-gold/10 blur-3xl animate-pulse" />
+                <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[360px] lg:h-[360px] rounded-full bg-gold/10 blur-3xl animate-pulse" />
                 {/* Anneau doré brillant avec rotation */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                  className="absolute w-[350px] h-[350px] rounded-full"
+                  className="absolute w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] lg:w-[350px] lg:h-[350px] rounded-full"
                   style={{
                     background: 'conic-gradient(from 0deg, transparent, #c9a84c, #e8d48b, #c9a84c, transparent, #c9a84c, #e8d48b, #c9a84c, transparent)',
                     padding: '1.5px',
                   }}
                 />
                 {/* Anneau doré statique */}
-                <div className="absolute w-[340px] h-[340px] rounded-full border border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
+                <div className="absolute w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[340px] lg:h-[340px] rounded-full border border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.4),0_0_60px_rgba(201,168,76,0.2),inset_0_0_30px_rgba(201,168,76,0.1)]" />
                 {/* Particules brillantes */}
-                <div className="absolute w-[360px] h-[360px] rounded-full overflow-visible">
+                <div className="absolute w-[220px] h-[220px] sm:w-[280px] sm:h-[280px] lg:w-[360px] lg:h-[360px] rounded-full overflow-visible">
                   <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} className="absolute top-2 left-1/2 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
                   <motion.div animate={{ opacity: [1, 0.4, 1] }} transition={{ duration: 2.5, repeat: Infinity }} className="absolute top-1/4 right-2 w-1.5 h-1.5 bg-gold-light rounded-full blur-[1px] shadow-[0_0_6px_#e8d48b]" />
                   <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 1.8, repeat: Infinity }} className="absolute bottom-4 left-8 w-2 h-2 bg-gold rounded-full blur-[2px] shadow-[0_0_8px_#c9a84c]" />
@@ -162,7 +162,7 @@ export default function Accueil() {
                   <motion.div animate={{ opacity: [0.8, 0.3, 0.8] }} transition={{ duration: 2.8, repeat: Infinity }} className="absolute bottom-8 right-1/3 w-2 h-2 bg-gold-light rounded-full blur-[2px] shadow-[0_0_8px_#e8d48b]" />
                 </div>
                 {/* Photo */}
-                <div className="relative w-[330px] h-[330px] rounded-full overflow-hidden">
+                <div className="relative w-[190px] h-[190px] sm:w-[250px] sm:h-[250px] lg:w-[330px] lg:h-[330px] rounded-full overflow-hidden">
                   <img
                     src={photo}
                     alt="Siakha Kaba"
@@ -171,9 +171,9 @@ export default function Accueil() {
                 </div>
 
                 <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-2 bg-surface border border-border px-4 py-2 rounded">
+                  <div className="flex items-center gap-2 bg-surface border border-border px-3 sm:px-4 py-1.5 sm:py-2 rounded">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="font-mono text-xs text-muted">AdminSys</span>
+                    <span className="font-mono text-[0.6rem] sm:text-xs text-muted">AdminSys</span>
                   </div>
                 </div>
               </motion.div>
